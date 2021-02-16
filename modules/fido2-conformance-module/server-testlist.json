@@ -1,0 +1,117 @@
+{
+    "name": "Server Tests",
+    "platform": "server",
+    "description": "This test suit contains FIDO2 server tests",
+    "required": {
+        "all": ["serverURL", "downloadMetadata", "fido2OptionalAlgorithms"]
+    },
+    "tests": {
+        "ServerPublicKeyCredentialCreationOptionsRequest": {
+            "name":"MakeCredential Request",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/CTAP2.js",
+                "/js/authenticator/tpmAIK.js",
+                "/js/authenticator/androidKeystoreAttestation.js",
+                "/js/authenticator/safetyNetAttest.js",
+                "/js/authenticator/init.js",
+                "/js/authenticator/ctap2Authenticator.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/webauthnClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/Server/MakeCredential/Server-ServerPublicKeyCredentialCreationOptions-Req-1.js"
+            ]
+        },
+        "ServerAuthenticatorAttestationResponse": {
+            "name":"MakeCredential Response",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/CTAP2.js",
+                "/js/authenticator/tpmAIK.js",
+                "/js/authenticator/androidKeystoreAttestation.js",
+                "/js/authenticator/safetyNetAttest.js",
+                "/js/authenticator/init.js",
+                "/js/authenticator/ctap2Authenticator.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/webauthnClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-1.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-2.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-3.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-4.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-5.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-6.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-7.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-8.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-9.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-A.js",
+                "tests/Server/MakeCredential/Server-ServerAuthenticatorAttestationResponse-Resp-B.js"
+            ]
+        },
+        "ServerPublicKeyCredentialGetOptionsResponse": {
+            "name":"GetAssertion Request",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/CTAP2.js",
+                "/js/authenticator/tpmAIK.js",
+                "/js/authenticator/androidKeystoreAttestation.js",
+                "/js/authenticator/safetyNetAttest.js",
+                "/js/authenticator/init.js",
+                "/js/authenticator/ctap2Authenticator.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/webauthnClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/Server/GetAssertion/Server-ServerPublicKeyCredentialGetOptionsResponse-Req-1.js"
+            ]
+        },
+        "ServerAuthenticatorAssertionResponse": {
+            "name":"GetAssertion Response",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/CTAP2.js",
+                "/js/authenticator/tpmAIK.js",
+                "/js/authenticator/androidKeystoreAttestation.js",
+                "/js/authenticator/safetyNetAttest.js",
+                "/js/authenticator/init.js",
+                "/js/authenticator/ctap2Authenticator.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/webauthnClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/Server/GetAssertion/Server-ServerAuthenticatorAssertionResponse-Resp-1.js",
+                "tests/Server/GetAssertion/Server-ServerAuthenticatorAssertionResponse-Resp-2.js",
+                "tests/Server/GetAssertion/Server-ServerAuthenticatorAssertionResponse-Resp-3.js"
+            ]
+        },
+        "MDS": {
+            "name":"Metadata Service Tests",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/CTAP2.js",
+                "/js/authenticator/tpmAIK.js",
+                "/js/authenticator/androidKeystoreAttestation.js",
+                "/js/authenticator/safetyNetAttest.js",
+                "/js/authenticator/init.js",
+                "/js/authenticator/ctap2Authenticator.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/webauthnClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/Server/MDS/mds-1.js"
+            ]
+        }
+    }
+}

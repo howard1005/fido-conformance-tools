@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "RegistrationResponse": {
+            "type": "object",
+            "properties": {
+                "header": {
+                    "$ref": "OperationHeader.scheme.json#/definitions/OperationHeader"
+                },
+                "fcParams": {
+                    "$ref": "Common.scheme.json#/definitions/FCParams"
+                },
+                "assertions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Assertions.scheme.json#/definitions/AuthenticatorRegistrationAssertion"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "header",
+                "fcParams",
+                "assertions"
+            ],
+            "additionalProperties": false
+        },
+        "AuthenticationResponse": {
+            "type": "object",
+            "properties": {
+                "header": {
+                    "$ref": "OperationHeader.scheme.json#/definitions/OperationHeader"
+                },
+                "fcParams": {
+                    "$ref": "Common.scheme.json#/definitions/FCParams"
+                },
+                "assertions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Assertions.scheme.json#/definitions/AuthenticatorSignAssertion"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "header",
+                "fcParams",
+                "assertions"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

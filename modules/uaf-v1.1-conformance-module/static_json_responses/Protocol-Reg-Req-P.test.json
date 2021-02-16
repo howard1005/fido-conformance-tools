@@ -1,0 +1,17 @@
+[
+    {
+        "header": {
+            "upv": {
+                "major": 1,
+                "minor": 1
+            },
+            "op": "Reg",
+            "appID": "https://uaf.example.com"
+        },
+        "challenge": "H9iW9yA9aAXF_lelQoi_DhUk514Ad8Tqv0zCnCqKDpo",
+        "username": "hello@test.com",
+        "policy": {
+            "accepted": []
+        }
+    }
+]

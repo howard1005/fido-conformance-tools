@@ -1,0 +1,22 @@
+{
+    "name": "UAF Interop Module",
+    "description": "",
+    "protocolVersion": "1.1",
+    "defaults": {
+        "currentUAFVersion": {
+            "major": 1,
+            "minor": 1
+        },
+        "polyfills": true
+    },
+    "dependencies": [
+        "utils.js",
+        "meta.js"
+    ],
+    "setup": "",
+    "schemes": [],
+    "availableMetadataStatements": [],
+    "testLists": {
+        "interop": "interop-testlist.json"
+    }
+}

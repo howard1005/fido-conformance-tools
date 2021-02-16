@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "StatusCode": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    }
+}

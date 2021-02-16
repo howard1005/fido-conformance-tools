@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "ChannelBinding": {
+            "type": "object",
+            "properties": {
+                "serverEndPoint": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "tlsServerCertificate": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "tlsUnique": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "cid_pubkey": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

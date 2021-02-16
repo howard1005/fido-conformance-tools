@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "VerificationMethodDescriptor": {
+            "type": "array",
+            "properties": {
+                "userVerification": {
+                    "type": "number",
+                    "enum": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+                },
+                "caDesc": {
+                    "$ref": "AccuracyDescriptor.scheme.json#/definitions/CodeAccuracyDescriptor"
+                },
+                "baDesc": {
+                    "$ref": "AccuracyDescriptor.scheme.json#/definitions/BiometricAccuracyDescriptor"
+                },
+                "paDesc": {
+                    "$ref": "AccuracyDescriptor.scheme.json#/definitions/PatternAccuracyDescriptor"
+                }
+            },
+            "minItems": 1,
+            "required": [
+                "userVerification"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

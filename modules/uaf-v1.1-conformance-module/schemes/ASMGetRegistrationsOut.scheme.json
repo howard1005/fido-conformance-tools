@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "GetRegistrationsOut": {
+            "type": "object",
+            "properties": {
+                "appRegs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ASMAppRegistration.scheme.json#/definitions/AppRegistration"
+                    }
+                }
+            },
+            "required": [
+                "appRegs"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

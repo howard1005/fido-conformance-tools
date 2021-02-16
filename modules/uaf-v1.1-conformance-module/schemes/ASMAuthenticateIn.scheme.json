@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AuthenticateIn": {
+            "type": "object",
+            "properties": {
+                "appID": {
+                    "$ref": "Common.scheme.json#/definitions/AppID"
+                },
+                "keyIDs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Common.scheme.json#/definitions/KeyID"
+                    },
+                    "minItems": 1
+                },
+                "finalChallenge": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "transaction": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Transaction.scheme.json#/definitions/Transaction"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "appID",
+                "finalChallenge"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

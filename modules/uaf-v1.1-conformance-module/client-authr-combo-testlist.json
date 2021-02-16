@@ -1,0 +1,117 @@
+{
+    "name": "Client-Authr Combo",
+    "platform": "client",
+    "description": "This test suit contains client tests",
+    "required": {
+        "all": ["clientVendor", "clientVersion", "metadataStatement"],
+        "dom": ["polyfills"],
+        "android": ["packageName"],
+        "ios": ["bundleID"]
+    },
+    "tests": {
+        "registration": {
+            "name":"Registration tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/registration/Protocol-Reg-Req-1.js",
+                "client/protocol/registration/Protocol-Reg-Req-2.js",
+                "client/protocol/registration/Protocol-Reg-Req-3.js",
+                "client/protocol/registration/Protocol-Reg-Req-4.js",
+                "client/protocol/registration/Protocol-Reg-Req-5.js",
+                "client/protocol/registration/Protocol-Reg-Req-6.js",
+                "client/protocol/registration/Protocol-Reg-Resp-1.js",
+                "client/protocol/registration/Protocol-Reg-Resp-2.js",
+                "client/protocol/registration/Protocol-Reg-Resp-3.js"
+            ]
+        },
+        "authentication": {
+            "name":"Authentication tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/authentication/Protocol-Auth-Req-1.js",
+                "client/protocol/authentication/Protocol-Auth-Req-2.js",
+                "client/protocol/authentication/Protocol-Auth-Req-3.js",
+                "client/protocol/authentication/Protocol-Auth-Req-4.js",
+                "client/protocol/authentication/Protocol-Auth-Req-5.js",
+                "client/protocol/authentication/Protocol-Auth-Req-6.js",
+                "client/protocol/authentication/Protocol-Auth-Req-7.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-1.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-2.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-3.js"
+            ]
+        },
+        "deregistration": {
+            "name":"Deregistration tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/deregistration/Protocol-Dereg-Req-1.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-2.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-3.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-4.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-5.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-6.js"
+            ]
+        },
+        "extensions": {
+            "name":"Extensions tests",
+            "description": "",
+            "platform": "android",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/extensions/Client-Ext-Android-KeyStoreAttestation-1.js"
+            ]
+        },
+        "dom-api": {
+            "name":"DOM API tests",
+            "platform": "dom",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/dom-api/FC-API-DOM-1.js"
+            ]
+        },
+        "android": {
+            "name":"Android API tests",
+            "platform": "android",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/android/FC-API-Android-1.js"
+            ]
+        },
+        "ios": {
+            "name":"iOS API tests",
+            "platform": "ios",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/ios/FC-API-iOS-1.js"
+            ]
+        },
+        "metadata": {
+            "name":"Metadata statement tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/metadata/Metadata-Stmt-1.js"
+            ]
+        }
+    }
+}

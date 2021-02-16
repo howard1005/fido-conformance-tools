@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AppRegistration": {
+            "type": "object",
+            "properties": {
+                "appID": {
+                    "$ref": "Common.scheme.json#/definitions/AppID"
+                },
+                "keyIDs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Common.scheme.json#/definitions/KeyID"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "appID",
+                "keyIDs"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

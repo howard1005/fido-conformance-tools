@@ -1,0 +1,176 @@
+{
+    "name": "CTAP2 Tests",
+    "platform": "hid",
+    "description": "This test suit contains CTAP2 Authenticator tests",
+    "required": {
+        "all": ["fidoauthenticator", "metadataStatement"]
+    },
+    "tests": {
+        "Transports": {
+            "name":"Transports",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Transports/hid-1.js",
+                "tests/CTAP2/Transports/nfc-1.js",
+                "tests/CTAP2/Transports/ble-1.js"
+            ]
+        },
+        "General": {
+            "name":"Generic",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Authr-Generic-1.js"
+            ]
+        },
+        "MakeCredentialRequest": {
+            "name":"MakeCredential Request",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-1.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-2.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-3.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-4.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-5.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Req-6.js"
+            ]
+        },
+        "MakeCredentialResponse": {
+            "name":"MakeCredential Response",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Resp-1.js",
+                "tests/CTAP2/Protocol/Make/Authr-MakeCred-Resp-2.js"
+            ]
+        },
+        "GetAssertionReq": {
+            "name":"GetAssertion Request",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Get/Authr-GetAssertion-Req-1.js",
+                "tests/CTAP2/Protocol/Get/Authr-GetAssertion-Req-2.js",
+                "tests/CTAP2/Protocol/Get/Authr-GetAssertion-Req-3.js"
+            ]
+        },
+        "GetAssertionResp": {
+            "name":"GetAssertion Response",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Get/Authr-GetAssertion-Resp-1.js",
+                "tests/CTAP2/Protocol/Get/Authr-GetAssertion-Resp-2.js"
+            ]
+        },
+        "Reset": {
+            "name":"Reset",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Reset/Authr-Reset-1.js"
+            ]
+        },
+        "Options": {
+            "name":"Options",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Options/ResidentKey.js"
+            ]
+        },
+        "Extensions": {
+            "name":"Extensions",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/Extensions/txAuthSimple.js",
+                "tests/CTAP2/Protocol/Extensions/txAuthGeneric.js",
+                "tests/CTAP2/Protocol/Extensions/hmacSecret.js"
+            ]
+        },
+        "ClientPin1": {
+            "name":"ClientPin1",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/HID.js",
+                "js/NFC.js",
+                "js/BLE.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Protocol/ClientPin1/Authr-ClientPin1-KeyAgreement.js",
+                "tests/CTAP2/Protocol/ClientPin1/Authr-ClientPin1-NewPin.js",
+                "tests/CTAP2/Protocol/ClientPin1/Authr-ClientPin1-PinPolicy.js",
+                "tests/CTAP2/Protocol/ClientPin1/Authr-ClientPin1-GetRetries.js"
+            ]
+        },
+        "Metadata": {
+            "name":"Metadata tests",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Metadata/Metadata-Stmt-1.js"
+            ]
+        }
+    }
+}

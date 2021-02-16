@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "OperationHeader": {
+            "type": "object",
+            "properties": {
+                "upv": {
+                    "$ref": "Version.scheme.json#/definitions/Version"
+                },
+                "op" : {
+                    "$ref": "Common.scheme.json#/definitions/Operation"
+                },
+                "appID": {
+                    "$ref": "Common.scheme.json#/definitions/AppID"
+                },
+                "serverData": {
+                    "$ref": "Common.scheme.json#/definitions/ServerData"
+                },
+                "exts": {
+                    "type": "array"
+                }
+            },
+            "required": ["upv", "op"],
+            "additionalProperties": false
+        }
+    }
+}

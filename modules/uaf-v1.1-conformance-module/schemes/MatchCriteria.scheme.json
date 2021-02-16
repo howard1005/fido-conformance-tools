@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "MatchCriteria": {
+            "type": "object",
+            "properties": {
+                "aaid": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Common.scheme.json#/definitions/AAID"
+                    },
+                    "minItems": 1
+                },
+                "vendorID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 4
+                    },
+                    "minItems": 1
+                },
+                "keyIDs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 32,
+                        "maxLength": 2048
+                    },
+                    "minItems": 1
+                },
+                "userVerificationDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "VerificationMethodDescriptor.scheme.json#/definitions/VerificationMethodDescriptor"
+                    },
+                    "minItems": 1
+                },
+                "keyProtection": {
+                    "type": "number"
+                },
+                "matcherProtection": {
+                    "type": "number"
+                },
+                "attachmentHint": {
+                    "type": "number",
+                    "enum": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+                },
+                "tcDisplay": {
+                    "type": "number"
+                },
+                "authenticationAlgorithms": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1
+                },
+                "assertionSchemes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "minItems": 1
+                },
+                "attestationTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1
+                },
+                "authenticatorVersion": {
+                    "type": "number"
+                },
+                "exts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Extension.scheme.json#/definitions/Extension"
+                    },
+                    "minItems": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

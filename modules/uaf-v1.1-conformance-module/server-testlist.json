@@ -1,0 +1,63 @@
+{
+    "name": "Server tests",
+    "platform": "server",
+    "description": "This test suit contains server tests",
+    "required": {
+        "all": ["serverURL", "downloadMetadata"]
+    },
+    "tests": {
+        "registration": {
+            "name":"Registration tests",
+            "description": "",
+            "helpers": [
+                "js/rest.helper.js"
+            ],
+            "cases": [
+                "server/registration/Server-Reg-Req-1.js",
+                "server/registration/Server-Reg-Req-2.js",
+                "server/registration/Server-Reg-Req-3.js",
+                "server/registration/Server-Reg-Req-4.js",
+                "server/registration/Server-Reg-Resp-1.js",
+                "server/registration/Server-Reg-Resp-2.js",
+                "server/registration/Server-Reg-Resp-3.js",
+                "server/registration/Server-Reg-Resp-4.js",
+                "server/registration/Server-Reg-Resp-5.js",
+                "server/registration/Server-Reg-Resp-6.js",
+                "server/registration/Server-Reg-Resp-7.js"
+            ]
+        },
+        "authentication": {
+            "name":"Authentication tests",
+            "description": "",
+            "helpers": [
+                "js/rest.helper.js"
+            ],
+            "cases": [
+                "server/authentication/Server-Auth-Req-1.js",
+                "server/authentication/Server-Auth-Req-2.js",
+                "server/authentication/Server-Auth-Req-3.js",
+                "server/authentication/Server-Auth-Req-4.js",
+                "server/authentication/Server-Auth-Resp-1.js",
+                "server/authentication/Server-Auth-Resp-2.js",
+                "server/authentication/Server-Auth-Resp-3.js",
+                "server/authentication/Server-Auth-Resp-4.js",
+                "server/authentication/Server-Auth-Resp-5.js",
+                "server/authentication/Server-Auth-Resp-6.js",
+                "server/authentication/Server-Auth-Resp-7.js"
+            ]
+        },
+        "deregistration": {
+            "name":"Deregistration tests",
+            "description": "",
+            "helpers": [
+                "js/rest.helper.js"
+            ],
+            "cases": [
+                "server/deregistration/Server-Dereg-Req-1.js",
+                "server/deregistration/Server-Dereg-Req-2.js",
+                "server/deregistration/Server-Dereg-Req-3.js",
+                "server/deregistration/Server-Dereg-Req-4.js"
+            ]
+        }
+    }
+}

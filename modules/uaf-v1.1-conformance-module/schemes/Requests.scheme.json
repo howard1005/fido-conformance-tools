@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "RegistrationRequest": {
+            "type": "object",
+            "properties": {
+                "header": {
+                    "$ref": "OperationHeader.scheme.json#/definitions/OperationHeader"
+                },
+                "challenge": {
+                    "$ref": "Common.scheme.json#/definitions/Challenge"
+                },
+                "username": {
+                    "$ref": "Common.scheme.json#/definitions/Username"
+                },
+                "policy" : {
+                    "$ref": "Policy.scheme.json#/definitions/Policy"
+                }
+            },
+            "required": ["header", "challenge", "username", "policy"],
+            "additionalProperties": false
+        },
+        "AuthenticationRequest": {
+            "type": "object",
+            "properties": {
+                "header": {
+                    "$ref": "OperationHeader.scheme.json#/definitions/OperationHeader"
+                },
+                "challenge": {
+                    "$ref": "Common.scheme.json#/definitions/Challenge"
+                },
+                "transaction": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Transaction.scheme.json#/definitions/Transaction"
+                    },
+                    "minItems": 1
+                },
+                "policy" : {
+                    "$ref": "Policy.scheme.json#/definitions/Policy"
+                }
+            },
+            "required": ["header", "challenge", "policy"],
+            "additionalProperties": false
+        },
+        "DeregistrationRequest": {
+            "type": "object",
+            "properties": {
+                "header": {
+                    "$ref": "OperationHeader.scheme.json#/definitions/OperationHeader"
+                },
+                "authenticators" : {
+                    "$ref": "DeregisterAuthenticator.scheme.json#/definitions/Authenticators"
+                }
+            },
+            "required": ["header", "authenticators"],
+            "additionalProperties": false
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Authenticator": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "aaid": {
+                    "$ref": "Common.scheme.json#/definitions/AAID"
+                },
+                "description": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "supportedUAFVersions": {
+                    "type" : "array",
+                    "anyOf" : [
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version1_x"},
+                                {"$ref": "Version.scheme.json#/definitions/Version"}
+                            ]
+                        },
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version"},
+                                {"$ref": "Version.scheme.json#/definitions/Version1_x"}
+                            ]
+                        },
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version"}
+                            ]
+                        }
+                    ]
+
+                },
+                "assertionScheme": {
+                    "type": "string",
+                    "enum": ["UAFV1TLV"]
+                },
+                "authenticationAlgorithm": {
+                    "type": "number",
+                    "enum": [1, 2, 3, 4, 5, 6, 8]
+                },
+                "attestationTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "enum": [15879, 15880]
+                    },
+                    "minItems": 1
+                },
+                "keyProtection": {
+                    "type": "number",
+                    "enum": [1, 2, 4, 6, 10, 17, 18, 20, 24]
+                },
+                "matcherProtection": {
+                    "type": "number",
+                    "enum": [1, 2, 4]
+                },
+                "attachmentHint": {
+                    "type": "number",
+                    "enum": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+                },
+                "isSecondFactorOnly": {
+                    "type": "boolean"
+                },
+                "tcDisplay": {
+                    "type": "number",
+                    "enum": [0, 1, 3, 5, 9, 17, 19, 21, 25]
+                },
+                "tcDisplayContentType": {
+                    "type": "string",
+                    "enum": ["text/plain", "image/png"]
+                },
+                "tcDisplayPNGCharacteristics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "DisplayPNGCharacteristicsDescriptor.scheme.json#/definitions/DisplayPNGCharacteristicsDescriptor"
+                    },
+                    "minItems": 1
+                },
+                "icon": {
+                    "type": "string",
+                    "pattern": "data:image/png;base64,"
+                }
+            }
+        }
+    }
+}

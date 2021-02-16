@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "GetUAFRequest ": {
+            "type": "object",
+            "properties": {
+                "op" : {
+                    "$ref": "Common.scheme.json#/definitions/Operation"
+                },
+                "previousRequest": {
+                    "type": "string"
+                },
+                "context": {
+                    "type": "string"
+                }
+            }
+        },
+        "ReturnUAFRequest": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "integer"
+                },
+                "uafRequest": {
+                    "type": "string"
+                },
+                "op" : {
+                    "$ref": "Common.scheme.json#/definitions/Operation"
+                },
+                "lifetimeMillis": {
+                    "type": "integer"
+                }
+            },
+            "required": ["statusCode"]
+        },
+        "SendUAFResponse": {
+            "type": "object",
+            "properties": {
+                "uafResponse" : {
+                    "$ref": "string"
+                },
+                "context": {
+                    "type": "string"
+                }
+            },
+            "required": ["uafResponse"]
+        },
+        "ServerResponse": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "additionalTokens": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Token"
+                    },
+                    "minItems": 1
+                },
+                "location": {
+                    "type": "string"
+                },
+                "postData": {
+                    "type": "string"
+                },
+                "newUAFRequest": {
+                    "type": "string"
+                }
+            }
+        },
+        "Token": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "pattern": "^(HTTP_COOKIE|OAUTH|OAUTH2|SAML1_1|SAML2|JWT|OPENID_CONNECT)$"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

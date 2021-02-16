@@ -1,0 +1,36 @@
+{
+  "name": "fido-conformance-tools-electron",
+  "description": "FIDO Alliance Official Certification Conformance Test tools",
+  "author": "Yuriy Ackermann <yuriy@fidoalliance.org>",
+  "version": "1.5.2",
+  "main": "./main.js",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/fido-alliance/fido-conformance-tools-electron/issues",
+    "email": "yuriy@fidoalliance.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fido-alliance/fido-conformance-tools-electron.git"
+  },
+  "dependencies": {
+    "@abandonware/noble": "git+https://github.com/fido-alliance/noble.git",
+    "body-parser": "^1.19.0",
+    "cbor": "^5.0.1",
+    "cross-spawn": "^7.0.1",
+    "electron": "^11.0.3",
+    "electron-context-menu": "^0.16.0",
+    "electron-is-dev": "^1.1.0",
+    "elliptic": "^6.5.3",
+    "express": "^4.17.1",
+    "node-hid": "^1.3.1",
+    "node-rsa": "^1.0.7",
+    "pcsclite": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "noble-winrt": "git+https://github.com/fido-alliance/noble-winrt.git"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^2.3.2"
+  }
+}

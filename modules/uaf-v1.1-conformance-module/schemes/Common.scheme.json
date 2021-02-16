@@ -1,0 +1,73 @@
+{   
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AppID": {
+            "spec-def": "string[1..512]",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 512
+        },
+        "FacetID": {
+            "spec-def": "string[1..512]",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 512
+        },
+        "AAID": {
+            "type": "string",
+            "minLength": 9,
+            "maxLength": 9,
+            "pattern": "^[0-9A-Fa-f]{4}#[0-9A-Fa-f]{4}$"
+        },
+        "KeyID": {
+            "spec-def": "base64url(byte[32...2048])",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "minLength": 42,
+            "maxLength": 2730
+        },
+        "Challenge": {
+            "spec-def": "base64url(byte[8...64])",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "minLength": 10,
+            "maxLength": 85
+        },
+        "Username": {
+            "spec-def": "string[1..128]",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+        },
+        "ServerData": {
+            "spec-def": "string[1..1536]",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1536
+        },
+        "FCParams": {
+            "spec-def": "base64url",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "minLength": 4
+        },
+        "Operation": {
+            "type": "string",
+            "pattern": "^(Reg|Auth|Dereg)$",
+            "minLength": 3,
+            "maxLength": 5
+        },
+        "ContentType": {
+            "spec-def": "MIME Content-Type",
+            "type": "string",
+            "pattern": "^(\\w+\/\\w+)$",
+            "minLength": 3
+        },
+        "Content": {
+            "spec-def": "base64url(byte[1...])",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "minLength": 1
+        }
+    }
+}

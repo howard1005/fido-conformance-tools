@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Transaction": {
+            "type": "object",
+            "properties": {
+                "contentType": {
+                    "$ref": "Common.scheme.json#/definitions/ContentType"
+                },
+                "content" : {
+                    "$ref": "Common.scheme.json#/definitions/Content"
+                },
+                "tcDisplayPNGCharacteristics": {
+                    "$ref": "DisplayPNGCharacteristicsDescriptor.scheme.json#/definitions/DisplayPNGCharacteristicsDescriptor"
+                }
+            },
+            "required": ["contentType", "content"],
+            "additionalProperties": false
+        }
+    }
+}

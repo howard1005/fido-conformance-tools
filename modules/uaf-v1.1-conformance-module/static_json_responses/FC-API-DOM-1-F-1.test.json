@@ -1,0 +1,15 @@
+[{
+    "header": {
+        "upv": {
+            "major": 1,
+            "minor": 1
+        },
+        "op": "Auth",
+        "appID": "",
+        "serverData": "5s7n8-7_LDAtRIKKYqbAtTTOezVKCjl2mPorYzbpxRrZ-_3wWroMXsF_pLYjNVm_l7bplAx4bkEwK6ibil9EHGfdfKOQ1q0tyEkNJFOgqdjVmLioroxgThlj8Istpt7q"
+    },
+    "challenge": "HQ1VkTUQC1NJDOo6OOWdxewrb9i5WthjfKIehFxpeuU",
+    "policy": {
+        "accepted": []
+    }
+}]

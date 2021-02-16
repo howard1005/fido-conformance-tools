@@ -1,0 +1,224 @@
+    {
+    "name": "WebAuthn Platform Tests",
+    "platform": "browser",
+    "description": "This test suit contains WebAuthn Platform Authenticator tests",
+    "required": {
+        "all": ["metadataStatement"]
+    },
+    "tests": {
+        "MakeCredReq1": {
+            "name":"MakeCredential Request 1",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-1.js"
+            ]
+        },
+        "MakeCredReq2": {
+            "name":"MakeCredential Request 2",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-2.js"
+            ]
+        },
+        "MakeCredReq3": {
+            "name":"MakeCredential Request 3",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-3.js"
+            ]
+        },
+        "MakeCredReq4": {
+            "name":"MakeCredential Request 4",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-4.js"
+            ]
+        },
+        "MakeCredReq5": {
+            "name":"MakeCredential Request 5",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-5.js"
+            ]
+        },
+        "MakeCredReq6": {
+            "name":"MakeCredential Request 6",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-6.js"
+            ]
+        },
+        "MakeCredReq7": {
+            "name":"MakeCredential Request 7",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Req-7.js"
+            ]
+        },
+        "MakeCredResp1": {
+            "name":"MakeCredential Response 1",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Resp-1.js"
+            ]
+        },
+        "MakeCredResp2": {
+            "name":"MakeCredential Response 2",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Resp-2.js"
+            ]
+        },
+        "MakeCredResp3": {
+            "name":"MakeCredential Response 3",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Resp-3.js"
+            ]
+        },
+        "MakeCredResp4": {
+            "name":"MakeCredential Response 4",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Resp-4.js"
+            ]
+        },
+        "MakeCredResp5": {
+            "name":"MakeCredential Response 5",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/MakeCredential/MakeCredential-Resp-5.js"
+            ]
+        },
+        "GetAssertionReq1": {
+            "name":"GetAssertion Request 1",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/GetAssertion/GetAssertion-Req-1.js"
+            ]
+        },
+        "GetAssertionReq2": {
+            "name":"GetAssertion Request 2",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/GetAssertion/GetAssertion-Req-2.js"
+            ]
+        },
+        "GetAssertionReq3": {
+            "name":"GetAssertion Request 3",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/GetAssertion/GetAssertion-Req-3.js"
+            ]
+        },
+        "GetAssertionResp1": {
+            "name":"GetAssertion Response 1",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/GetAssertion/GetAssertion-Resp-1.js"
+            ]
+        },
+        "GetAssertionResp2": {
+            "name":"GetAssertion Response 2",
+            "description": "",
+            "helpers": [
+                "js/meta.js",
+                "js/WebAuthn.js",
+                "js/CTAP2.js"
+            ],
+            "cases": [
+                "tests/WebAuthn/GetAssertion/GetAssertion-Resp-2.js"
+            ]
+        },
+        "Metadata": {
+            "name":"Metadata tests",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/CTAP2/Metadata/Metadata-Stmt-1.js"
+            ]
+        }
+    }
+}

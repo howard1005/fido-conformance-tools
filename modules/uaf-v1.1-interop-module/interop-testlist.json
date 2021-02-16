@@ -1,0 +1,22 @@
+{
+    "name": "Interop tests",
+    "platform": "client",
+    "description": "This test suit contains client tests",
+    "required": {
+        "all": ["username", "serverURL", "aaid"],
+        "dom": ["polyfills"]
+    },
+    "tests": {
+        "Interop": {
+            "name":"Registration tests",
+            "description": "",
+            "helpers": [
+                "authenticator.helper.js",
+                "rest.helper.js"
+            ],
+            "cases": [
+                "interop/Interop-1.js"
+            ]
+        }
+    }
+}

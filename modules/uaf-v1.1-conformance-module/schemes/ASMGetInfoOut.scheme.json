@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "GetInfoOut": {
+            "type": "object",
+            "properties": {
+                "Authenticators": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "AuthenticatorInfo.scheme.json#/definitions/AuthenticatorInfo"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Authenticators"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

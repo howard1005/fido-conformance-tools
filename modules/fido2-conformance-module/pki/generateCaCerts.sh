@@ -1,0 +1,1 @@
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 10000 -nodes -out TROOT.crt -keyout TROOT.key -subj "/CN=FIDO2 TEST ROOT/emailAddress=conformance-tools@fidoalliance.org/O=FIDO Alliance/OU=CWG/C=US/ST=MY/L=Wakefield"

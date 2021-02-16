@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "FinalChallengeParams": {
+            "type": "object",
+            "properties": {
+                "appID": {
+                    "$ref": "Common.scheme.json#/definitions/AppID"
+                },
+                "challenge": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 86
+                },
+                "facetID": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                },
+                "channelBinding": {
+                    "$ref": "ChannelBinding.scheme.json#/definitions/ChannelBinding"
+                }
+            },
+            "required": ["appID", "challenge", "facetID", "channelBinding"],
+            "additionalProperties": false
+        }
+    }
+}

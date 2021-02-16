@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>FIDO Conformance Tools</title>
+
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"> -->
+        <link rel="stylesheet" href="css/material.min.css">
+        <link rel="stylesheet" href="css/material.blue_grey-amber.min.css" />
+        <link rel="stylesheet" href="css/material.icons.css">
+        <link rel="stylesheet" href="css/mocha.min.css">
+        <link rel="stylesheet" href="css/dialog-polyfill.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/vendor/material.min.js"></script>
+        <script src="js/preloadconfig.js"></script>
+    </head>
+    <body>
+        <div id="fido__snackbar" aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Snackbars -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Dialogs -->
+            <!-- Return to main menu -->
+            <dialog class="fido__confirm__dialog mdl-dialog">
+                <h4 class="mdl-dialog__title">Return to main menu?</h4>
+                <div class="mdl-dialog__content">
+                    <p>
+                        Changing test suit will lead you to loose all of your current test suit configs. Are you sure?
+                    </p>
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="fido__confirm__dialog--confirm mdl-button">I am sure</button>
+                    <button type="button" class="fido__confirm__dialog--cancel mdl-button close">Cancel</button>
+                </div>
+            </dialog>
+
+            <dialog class="fido__tool__advanced__config--modal mdl-dialog">
+                <form id="fido__tool__advanced__config--form">
+                    <h4 class="mdl-dialog__title">Advanced config</h4>
+                    <div class="mdl-dialog__content">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <p style="margin: 0">Expected HID packet size. Default 64bytes</p>
+                            <input style="width: 100%" class="fido__tool__advanced__config--hidpacketsize" name="hidpacketsize" type="number" min="8" max="64" id="hidpacketsize">
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <p style="margin: 0">Min RSSI for BLE to connect. Default -80db</p>
+                            <input style="width: 100%" class="fido__tool__advanced__config--minrssi" name="minrssi" type="number" min="-100" max="-20" id="minrssi">
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <p style="margin: 0">Grace period between BLE requests ms. Default 750ms</p>
+                            <input style="width: 100%" class="fido__tool__advanced__config--blegraceperiod" name="blegraceperiod" type="number" min="0" max="10000" id="blegraceperiod">
+                        </div>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                        <button type="submit" class="fido__tool__advanced__config--confirm mdl-button">Submit</button>
+                        <button type="button" class="fido__tool__advanced__config--cancel mdl-button close">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <dialog class="fido__results__submit--modal mdl-dialog">
+                <form id="fido__results__submit--form">
+                    <h4 class="mdl-dialog__title">Submit results?</h4>
+                    <div class="mdl-dialog__content">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input fido__results__submit--ProductName" name="ProductName" type="text" id="submitResultsProductName" required>
+                            <label class="mdl-textfield__label" for="submitResultsProductName">Product Name</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input fido__results__submit--CompanyName" name="CompanyName" type="text" id="submitResultsCompanyName" required>
+                            <label class="mdl-textfield__label" for="submitResultsCompanyName">Company Name</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input fido__results__submit--Email" name="Email" type="text" id="submitResultsEmail" required>
+                            <label class="mdl-textfield__label" for="submitResultsEmail">Email</label>
+                        </div>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                        <button type="button" class="fido__results__submit--confirm mdl-button" type="submit">Submit</button>
+                        <button type="button" class="fido__results__submit--cancel mdl-button close">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <dialog class="fido__dialog--full-width fido__eula--modal mdl-dialog" style="width: 80%; height: 75%;">
+                <h4 class="mdl-dialog__title">YOU MUST READ AND ACCEPT EULA BEFORE USING THE TOOLS</h4>
+                <div class="mdl-dialog__content" style="height: 80%">
+                    <embed src="http://localhost:61904/eula-fido-conformance-test-tools.pdf" width="100%" height="100%" />
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="fido__dialog__controls--close fido__dialog__controls--accept-eula mdl-button">Accept</button>
+                    <button type="button" class="fido__dialog__controls--decline-eula mdl-button">Decline</button>
+                </div>
+            </dialog>
+
+            <dialog class="fido__dialog--full-width fido__dialog--contact mdl-dialog">
+                <h4 class="mdl-dialog__title">Contact</h4>
+                <div class="mdl-dialog__content">
+                    <p>
+                        If you have issues, questions, or suggestion related to the Conformance Test Tools, please contact: <b>Conformance Tools support</b>
+                        <br><b><a href="mailto:conformance-tools@fidoalliance.org">conformance-tools@fidoalliance.org</a></b>
+                    </p>
+
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="fido__dialog__controls--close mdl-button">Close</button>
+                </div>
+            </dialog>
+
+            <dialog class="fido__dialog--full-width fido__dialog--legal mdl-dialog">
+                <h4 class="mdl-dialog__title">Legal</h4>
+                <div class="mdl-dialog__content">
+                    <p>
+                        Certification Conformance Test Tools<br>
+                        © 2016-2020 FIDO Alliance<br>
+                        All rights reserved
+                    </p>
+
+                    <p><a href="http://localhost:61904/eula-fido-conformance-test-tools.pdf" download>Download EULA </a></p>
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="fido__dialog__controls--close mdl-button">Close</button>
+                </div>
+            </dialog>
+
+        <!-- Dialogs end -->
+
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <div class="mdl-tooltip" data-mdl-for="button__back">
+                        Back to main menu
+                    </div>
+                    <button class="fido__test__selector__page mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="button__back" style="display: none;">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+
+                    <div class="mdl-layout-spacer"></div>
+                    <span class="mdl-layout-title"><span class="fido-tool-title"> </span><span class="fido__empty__onreset fido__subtitle"></span></span>
+                    <div class="mdl-layout-spacer"></div>
+
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: white;" id="hdrbtn">
+                        MENU
+                    </button>
+
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                        <!-- <li class="mdl-menu__item fido__dialog--button" data-for=".fido__dialog--about">About</li> -->
+                        <li class="mdl-menu__item fido__dialog--button" data-for=".fido__dialog--contact">Contact</li>
+                        <li class="mdl-menu__item fido__dialog--button" data-for=".fido__dialog--legal">Legal information</li>
+                        <li class="mdl-menu__item fido__dialog--button fido__dialog--advanced-config">Advanced config</li>
+                        <li class="mdl-menu__item fido__dialog--button fido__dialog--reset-config">Reset config</li>
+                        <li class="mdl-menu__item fido__dialog--button fido__dialog--open-inspector">Open inspector</li>
+                        <li class="mdl-menu__item fido__dialog--button fido__dialog--open-tools-in-the-browser">Open tools in the browser</li>
+                        <li class="mdl-menu__item fido__dialog--button" onclick="openLinkInBrowser('https://www.microsoft.com/en-in/download/details.aspx?id=48145')">FOR WINDOWS 10 BLE: Download Visual C++ Redistributable</li>
+                    </ul>
+                </div>
+            </header>
+
+            <div style="" class="mdl-grid demo-content">
+                <div class="fido__test__suit__select--container mdl-cell mdl-cell--12-col">
+                    <!-- Test suits cards container -->
+                </div>             
+            </div>
+
+            <main class="fido__test__container mdl-layout__content mdl-color--grey-100">
+                <div class="mdl-grid demo-content">
+                    <div id="mochacontainer" class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+                        <div class="fido__empty__onreset mdl-cell mdl-cell--12-col mocha-metainfo">
+                            <!-- Mocha metainfo goes here -->
+                        </div>
+                        <div class="fido__empty__onreset mdl-cell mdl-cell--12-col mocha" id="mocha">
+                            <!-- Mocha results goes here -->
+                        </div>
+                    </div>
+
+                    <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-grid mdl-grid--no-spacing">
+
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                            <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp ">
+                                <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+                                    <h3>Select tests to run</h3>
+                                    
+                                    <div class="fido__empty__onreset fido__test__selector--container">
+                                        <!-- Test selection menu goes here -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                            <div class="demo-options mdl-card mdl-color--indigo-500 mdl-shadow--2dp">
+                                <div class="fido__test__configuration mdl-card__supporting-text mdl-color-text--blue-grey-50">
+                                    <h3>
+                                        Tests configuration
+                                    </h3>
+
+                                    <div class="fido__empty__onreset fido__test__configuration--container">
+                                        <!-- Configuration fields go here -->
+                                    </div>
+                                    
+                                    <div class="fido__metadataStatement fido__hide__onreset hidden_on_load">
+                                        <h3>Metadata Statement (For Authenticators Tests Only)</h3>
+                                        <input type="file" class="fido__test__metadata--promt" data-eval="false" style="display: none;"> 
+                                        <div class="fido__test__helpers--container" >
+                                            <div class="fido__authenticator_info mdl-cell mdl-cell--12-col">
+
+                                                <div class="mdl-tooltip" data-mdl-for="fido__authenticator_info--clear">
+                                                    Clear metadata info
+                                                </div>
+                                                <button id="fido__authenticator_info--clear" class="fido__authenticator_info--clear mdl-button mdl-js-button mdl-js-ripple-effect">
+                                                    <i class="material-icons">cancel</i>
+                                                </button>
+
+                                                <div class="fido__authenticator_info--container">
+                                                    <!-- Authenticator info -->
+                                                </div>
+                                            </div>
+
+                                            <div class="fido__test__metadata--drop__zone fido__drag_n_drop mdl-cell mdl-cell--12-col">
+                                                <p>Drop your metadata statement here</p>
+                                                <p>Or click to open promt</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fido__helpers fido__hide__onreset hidden_on_load">
+                                        <h3>Polyfills (For DOM Authenticators Only)</h3>
+                                        <input type="file" class="fido__test__helpers--promt" data-eval="false" style="display: none;"> 
+                                        <div class="fido__test__helpers--container" >
+                                            
+                                            <div class="fido__empty__onreset fido__test__helpers--file_list mdl-cell mdl-cell--12-col">
+                                                <!-- Deletable Contact Chip -->
+                                            </div>
+
+                                            <div class="fido__test__helpers--drop__zone fido__drag_n_drop mdl-cell mdl-cell--12-col">
+                                                <p>Drop your DOM JS API polyfill</p>
+                                                <p>Or click to open promt</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="fido__fidoauthenticators fido__hide__onreset hidden_on_load">
+                                        <h3>FIDO Authenticators</h3>
+                                        
+                                        <ul class="mdl-list fido__fidoauthenticators_list fido__empty__onreset">
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <main class="uaf10interoptools mdl-layout__content mdl-color--grey-100" style="display: none;">
+                <div class="mdl-grid demo-content">
+                    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <!-- Mocha metainfo goes here -->
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, corporis! Ad fugit esse quos illum pariatur nisi iure, earum recusandae quidem eum nobis, quibusdam sapiente voluptas dolorum laborum praesentium itaque.
+                        </div>
+                    </div>
+
+                    <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-grid mdl-grid--no-spacing">
+
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                            <div class="uaf10interoptools-settings demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp ">
+                                <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+                                    <h4>Test configuration</h4>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" id="uaf10interoptools-username">
+                                        <label class="mdl-textfield__label">Username</label>
+                                    </div>
+                                     <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" id="uaf10interoptools-serverurl">
+                                        <label class="mdl-textfield__label">Server URL</label>
+                                    </div>
+                                     <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" id="uaf10interoptools-aaid">
+                                        <label class="mdl-textfield__label">Authenticator AAID</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="fido__test__controls">
+            <a href="#" id="" class="fido__results__submit--button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent mdl-color-text--white" style="display: none">Submit results</a>
+            <a href="#" id="" class="fido__test__mocha--start mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Run</a>
+            <a href="#" id="" class="fido__test__mocha--stop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Stop</a>
+            <a href="#" id="" class="fido__test__mocha--reset mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Reset</a>
+        </div>
+
+        <!-- Vendor -->
+        <script src="js/vendor/jquery.min.js"></script>
+        <script src="js/vendor/ASN1.js"></script>
+        <script src="js/vendor/mocha.min.js"></script>
+        <script src="js/vendor/watch.min.js"></script>
+        <script src="js/vendor/chai.min.js"></script>
+        <script src="js/vendor/ajv.min.js"></script>
+        <script src="js/vendor/jszip.min.js"></script>
+        <script src="js/vendor/FileSaver.min.js"></script>
+        <script src="js/vendor/dialog-polyfill.min.js"></script>
+        <script src="js/vendor/jsrsasign.min.js"></script>
+        <script src="js/vendor/TextEncoderPolyfill.js"></script>
+        <script src="js/jsrsasign.helpers.js"></script>
+        <script src="js/vanillacbor.js"></script>
+
+        <!-- Utils -->
+        <script src="js/base64url-arraybuffer.js"></script>
+        <script src="js/base64-arraybuffer.js"></script>
+        <script src="js/hex-arraybuffer.js"></script>
+        <script src="js/isnative.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/load.js"></script>
+        <script src="js/view.js"></script>
+        <script src="js/tlv.js"></script>
+        <script src="js/controller.js"></script>
+        <script src="js/sandbox.js"></script>
+        <script src="js/webauthn.bindings.js"></script>
+
+        <!-- <script src="../modules/uaf-v1.1-conformance-module/js/meta.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/Init.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/UI.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/KeyEnclave.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/VerifyFacets.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/TLVSchemas.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/Authenticator.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/ASM.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/Client.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/authenticator/ClientAPI.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/verifyassertion.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/rest.helper.js"></script>
+        <script src="../modules/uaf-v1.1-conformance-module/js/utils.js"></script> -->
+
+        <!-- <script src="../modules/fido2-conformance-module/js/CTAP2.js"></script>
+        <script src="../modules/fido2-conformance-module/js/HID.js"></script>
+        <script src="../modules/fido2-conformance-module/js/NFC.js"></script>
+        <script src="../modules/fido2-conformance-module/js/BLE.js"></script>
+        <script src="../modules/fido2-conformance-module/js/WebAuthn.js"></script>
+        <script src="../modules/fido2-conformance-module/js/meta.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/mdsRoot.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/mdsRootCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/mdsIntermediate.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/mdsIntermediateCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/mdsSubject.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/androidKeystoreAttestation.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/tpmEK.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/tpmRootCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/tpmEKCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/safetyNetRoot.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/safetyNetIntermediate.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/safetyNetAttest.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/safetyNetRootCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/safetyNetIntermediateCRL.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/tpmAIK.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/init.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/ctap2Authenticator.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/u2fAuthenticator.js"></script>
+        <script src="../modules/fido2-conformance-module/js/authenticator/webauthnClient.js"></script>
+        <script src="../modules/fido2-conformance-module/js/serverAPI.js"></script> -->
+
+        <!-- <script src="../modules/u2f-v1.1-conformance-module/js/meta.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/BLE.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/HID.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/NFC.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/U2F.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/authenticator/u2fAuthenticator.js"></script>
+        <script src="../modules/u2f-v1.1-conformance-module/js/authenticator/u2fClient.js"></script> -->
+
+        <script>
+            var assert = chai.assert;
+            mocha.setup('bdd');
+
+            /* TODO: Make something nicer of it */
+            $('.fido__instance-version')
+                .text(`v${window.packageVersion}`);
+
+            let pageTitle = `FIDO Conformance Tools v${window.packageVersion}`;
+            $('title')
+                .text(pageTitle)
+
+            $('.fido-tool-title')
+                .text(pageTitle)
+
+            loadMetainformation().then((results) => {
+                $('.fido__test__suit__select--container')
+                    .append(render.testSuitCards(results));
+
+                if(db.get().testSuit)
+                    loadTestSuitHtml(db.get().testSuit)
+            })
+
+            if(db.get('hadResetConfig') !== true) {
+                db.save(true, 'hadResetConfig')
+                db.save('{}', 'config')
+            }
+
+            if(window.config && window.config.test && window.config.test.CustomHIDConfigSize) {
+                console.log(`Setting HID Packet size to the custom value of ${window.config.test.CustomHIDConfigSize}`)
+                navigator.fido.fido2.hid.setCustomPacketSize(window.config.test.CustomHIDConfigSize);
+            } else {
+                navigator.fido.fido2.hid.resetPacketSize();
+            }
+
+
+            if(window.config && window.config.test && window.config.test.CustomBLERSSI) {
+                console.log(`Setting minimum RSSI to the custom value of ${window.config.test.CustomBLERSSI}`)
+                navigator.fido.fido2.ble.setMinRSSI(window.config.test.CustomBLERSSI);
+            } else {
+                navigator.fido.fido2.ble.resetMinRSSI();
+            }
+
+            checkEULA()
+        </script>
+    </body>
+</html>

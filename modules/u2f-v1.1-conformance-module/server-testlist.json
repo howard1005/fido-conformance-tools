@@ -1,0 +1,66 @@
+{
+    "name": "Server tests",
+    "platform": "server",
+    "description": "This test suit contains server tests",
+    "required": {
+        "all": ["serverURL", "downloadMetadata"]
+    },
+    "tests": {
+        "RegisterReq": {
+            "name": "Register Request",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/u2fClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/server/Register/Server-Register-Req-1.js"
+            ]
+        },
+        "RegisterResp": {
+            "name": "Register Response",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/u2fClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/server/Register/Server-Register-Resp-1.js",
+                "tests/server/Register/Server-Register-Resp-2.js",
+                "tests/server/Register/Server-Register-Resp-3.js"
+            ]
+        },
+        "SignReq": {
+            "name": "Sign Request",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/u2fClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/server/Sign/Server-Sign-Req-1.js"
+            ]
+        },
+        "SignResp": {
+            "name": "Sign Response",
+            "description": "",
+            "helpers": [
+                "/js/meta.js",
+                "/js/authenticator/u2fAuthenticator.js",
+                "/js/authenticator/u2fClient.js",
+                "/js/serverAPI.js"
+            ],
+            "cases": [
+                "tests/server/Sign/Server-Sign-Resp-1.js",
+                "tests/server/Sign/Server-Sign-Resp-2.js",
+                "tests/server/Sign/Server-Sign-Resp-3.js"
+            ]
+        }
+    }
+}

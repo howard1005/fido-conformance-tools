@@ -1,0 +1,113 @@
+{
+    "name": "Client",
+    "platform": "android",
+    "description": "This test suit contains tests for client",
+    "required": {
+        "all": ["clientVendor", "clientVersion", "metadataStatement"],
+        "android": ["packageName", "ASMPackageName"]
+    },
+    "tests": {
+        "registration": {
+            "name":"Registration tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/registration/Protocol-Reg-Req-1.js",
+                "client/protocol/registration/Protocol-Reg-Req-2.js",
+                "client/protocol/registration/Protocol-Reg-Req-3.js",
+                "client/protocol/registration/Protocol-Reg-Req-4.js",
+                "client/protocol/registration/Protocol-Reg-Req-5.js",
+                "client/protocol/registration/Protocol-Reg-Req-6.js",
+                "client/protocol/registration/Protocol-Reg-Resp-1.js",
+                "client/protocol/registration/Protocol-Reg-Resp-2.js",
+                "client/protocol/registration/Protocol-Reg-Resp-3.js"
+            ]
+        },
+        "authentication": {
+            "name":"Authentication tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/authentication/Protocol-Auth-Req-1.js",
+                "client/protocol/authentication/Protocol-Auth-Req-2.js",
+                "client/protocol/authentication/Protocol-Auth-Req-3.js",
+                "client/protocol/authentication/Protocol-Auth-Req-4.js",
+                "client/protocol/authentication/Protocol-Auth-Req-5.js",
+                "client/protocol/authentication/Protocol-Auth-Req-6.js",
+                "client/protocol/authentication/Protocol-Auth-Req-7.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-1.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-2.js",
+                "client/protocol/authentication/Protocol-Auth-Resp-3.js"
+            ]
+        },
+        "deregistration": {
+            "name":"Deregistration tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/protocol/deregistration/Protocol-Dereg-Req-1.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-2.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-3.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-4.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-5.js",
+                "client/protocol/deregistration/Protocol-Dereg-Req-6.js"
+            ]
+        },
+        "android": {
+            "name":"Android API tests",
+            "description": "",
+            "helpers": [
+                "js/authenticator.helper.js"
+            ],
+            "cases": [
+                "client/android/FC-API-Android-1.js"
+            ]
+        },
+        "metadata": {
+            "name":"Metadata statement tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/metadata/Metadata-Stmt-1.js"
+            ]
+        },
+        "asmGeneral": {
+            "name":"ASM General tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-1.js"
+            ]
+        },
+        "asmRegister": {
+            "name":"ASM Register tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-2.js"
+            ]
+        },
+        "asmAuthenticate": {
+            "name":"ASM Auth tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-3.js"
+            ]
+        },
+        "asmDereg": {
+            "name":"ASM Dereg tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-4.js"
+            ]
+        }
+    }
+}

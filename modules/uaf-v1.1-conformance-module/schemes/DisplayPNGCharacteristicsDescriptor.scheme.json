@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "DisplayPNGCharacteristicsDescriptor": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "number"
+                },
+                "height": {
+                    "type": "number"
+                },
+                "bitDepth": {
+                    "type": "number"
+                },
+                "colorType": {
+                    "type": "number"
+                },
+                "compression": {
+                    "type": "number"
+                },
+                "filter": {
+                    "type": "number"
+                },
+                "interlace": {
+                    "type": "number"
+                },
+                "plte": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 256,
+                    "items": {
+                        "$ref": "RGBPaletteEntry.scheme.json#/definitions/RGBPaletteEntry"
+                    }
+                }
+            },
+
+            "required": ["width", "height", "bitDepth", "colorType", "compression", "filter", "interlace"],
+
+            "additionalProperties": false
+        }
+    }
+}

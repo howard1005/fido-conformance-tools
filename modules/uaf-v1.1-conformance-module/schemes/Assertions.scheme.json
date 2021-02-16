@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AuthenticatorRegistrationAssertion": {
+            "type": "object",
+            "properties": {
+                "assertionScheme": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "assertion": {
+                    "spec-def": "base64url(byte[1..4096])",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "minLength": 4,
+                    "maxLength": 5461
+                },
+                "tcDisplayPNGCharacteristics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "DisplayPNGCharacteristicsDescriptor.scheme.json#/definitions/DisplayPNGCharacteristicsDescriptor"
+                    },
+                    "minItems": 1
+                },
+                "exts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Extension.scheme.json#/definitions/Extension"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "assertionScheme",
+                "assertion"
+            ],
+            "additionalProperties": false
+        },
+        "AuthenticatorSignAssertion": {
+            "type": "object",
+            "properties": {
+                "assertionScheme": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "assertion": {
+                    "spec-def": "base64url(byte[1..4096])",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "minLength": 4,
+                    "maxLength": 5461
+                },
+                "exts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Extension.scheme.json#/definitions/Extension"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "assertionScheme",
+                "assertion"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

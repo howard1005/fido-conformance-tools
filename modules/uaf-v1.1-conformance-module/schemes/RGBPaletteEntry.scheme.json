@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "RGBPaletteEntry": {
+            "type": "object",
+            "properties": {
+                "r": {
+                    "type": "number"
+                },
+                "g": {
+                    "type": "number"
+                },
+                "b": {
+                    "type": "number"
+                }
+            },
+            "required": ["r", "g", "b"],
+            "additionalProperties": false
+        }
+    }
+}

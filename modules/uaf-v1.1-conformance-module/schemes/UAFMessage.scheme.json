@@ -1,0 +1,17 @@
+{   
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "UAFMessage": {
+            "type": "object",
+            "properties": {
+                "uafProtocolMessage": {
+                    "type" : "string"
+                },
+                "additionalData": {
+                    "type" : "object"
+                }
+            },
+            "required": ["uafProtocolMessage"]
+        }
+    }
+}

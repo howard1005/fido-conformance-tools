@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AuthenticatorInfo": {
+            "allOf": [
+                {
+                    "$ref": "BaseAuthenticatorInfo.scheme.json#/definitions/BaseAuthenticatorInfo"
+                },
+                {
+                    "properties": {
+                        "authenticatorIndex": {
+                            "type": "number"
+                        },
+                        "asmVersions": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "Version.scheme.json#/definitions/Version"
+                            },
+                            "minItems": 1
+                        },
+                        "isUserEnrolled": {
+                            "type": "boolean"
+                        },
+                        "hasSettings": {
+                            "type": "boolean"
+                        },
+                        "userVerification": {
+                            "type": "number"
+                        },
+                        "isRoamingAuthenticator": {
+                            "type": "boolean"
+                        },
+                        "supportedExtensionIDs": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "minLength": 1
+                            }
+                        },
+                        "title": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    },
+                    "required": [
+                        "authenticatorIndex",
+                        "asmVersions",
+                        "isUserEnrolled",
+                        "hasSettings",
+                        "aaid",
+                        "assertionScheme",
+                        "authenticationAlgorithm",
+                        "attestationTypes",
+                        "userVerification",
+                        "keyProtection",
+                        "matcherProtection",
+                        "attachmentHint",
+                        "isSecondFactorOnly",
+                        "isRoamingAuthenticator",
+                        "supportedExtensionIDs",
+                        "tcDisplay"
+                    ]
+                }
+            ]
+        }
+    }
+}

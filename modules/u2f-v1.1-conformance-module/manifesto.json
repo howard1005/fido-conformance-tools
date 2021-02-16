@@ -1,0 +1,27 @@
+{
+    "name": "U2F",
+    "description": "Tests",
+    "protocolVersion": "1.1",
+    "defaults": {
+        "currentU2FVersion": {
+            "major": 1,
+            "minor": 1
+        },
+        "downloadMetadata": true
+    },
+    "dependencies": [
+        "js/HID.js",
+        "js/NFC.js",
+        "js/BLE.js",
+        "js/U2F.js"
+    ],
+    "availableMetadataStatements": [
+        "U2FSecp256k1.metadata.json"
+    ],    
+    "setup": "",
+    "schemes": [],
+    "testLists": {
+        "authr": "authr-testlist.json",
+        "server": "server-testlist.json"
+    }
+}

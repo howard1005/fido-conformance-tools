@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "DeregisterIn": {
+            "type": "object",
+            "properties": {
+                "appID": {
+                    "$ref": "Common.scheme.json#/definitions/AppID"
+                },
+                "keyID": {
+                    "$ref": "Common.scheme.json#/definitions/KeyID"
+                }
+            },
+            "required": [
+                "appID",
+                "keyID"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "MetadataStatement": {
+            "allOf": [
+                {
+                    "$ref": "Authenticator.scheme.json#/definitions/Authenticator"
+                },
+                {
+                    "properties": {
+                        "authenticatorVersion": {
+                            "type": "number"
+                        },
+                        "upv": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "Version.scheme.json#/definitions/Version"
+                            },
+                            "minItems": 1
+                        },
+                        "publicKeyAlgAndEncoding": {
+                            "type": "number",
+                            "enum": [256, 257, 258, 259]
+                        },
+                        "userVerificationDetails": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "VerificationMethodDescriptor.scheme.json#/definitions/VerificationMethodDescriptor"
+                            },
+                            "minItems": 1
+                        },
+                        "attestationRootCertificates": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "minLength": 1
+                            }
+                        }
+                    },
+                    "required": ["authenticatorVersion", "upv", "publicKeyAlgAndEncoding", "userVerificationDetails", "aaid", "description", "assertionScheme", "authenticationAlgorithm", "attestationTypes", "keyProtection", "matcherProtection", "attachmentHint", "isSecondFactorOnly", "tcDisplay", "icon"]
+                }
+            ]
+        }
+    }
+}

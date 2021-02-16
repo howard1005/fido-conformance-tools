@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "DeregisterAuthenticator": {
+            "type": "object",
+            "properties": {
+                "aaid": {
+                    "$ref": "Common.scheme.json#/definitions/AAID"
+                },
+                "keyID": {
+                    "$ref": "Common.scheme.json#/definitions/KeyID"
+                }
+            },
+            "required": ["aaid", "keyID"]
+        },
+        "Authenticators": {
+            "type": "array",
+            "items": {
+                "$ref": "DeregisterAuthenticator.scheme.json#/definitions/DeregisterAuthenticator"
+            }
+        }
+    }
+}

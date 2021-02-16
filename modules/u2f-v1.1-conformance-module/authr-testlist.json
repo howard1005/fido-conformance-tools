@@ -1,0 +1,62 @@
+{
+    "name": "Authenticator tests",
+    "platform": "hid",
+    "description": "This test suit contains authr tests",
+    "required": {
+        "all": ["fidoauthenticator", "metadataStatement"]
+    },
+    "tests": {
+        "Transports": {
+            "name":"Test Transports",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/authr/Transports/hid-1.js",
+                "tests/authr/Transports/nfc-1.js",
+                "tests/authr/Transports/ble-1.js"
+            ]
+        },
+        "General": {
+            "name":"Test General",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/authr/Protocol/General.js"
+            ]
+        },
+        "Registration": {
+            "name":"Test Registration",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/authr/Protocol/Registration.js"
+            ]
+        },
+        "Authentication": {
+            "name":"Test Authentication",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/authr/Protocol/Authentication.js"
+            ]
+        },
+        "Metadata": {
+            "name":"Metadata tests",
+            "description": "",
+            "helpers": [
+                "js/meta.js"
+            ],
+            "cases": [
+                "tests/authr/Metadata/Metadata-Stmt-1.js"
+            ]
+        }
+    }
+}

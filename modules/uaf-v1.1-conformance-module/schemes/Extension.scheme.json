@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Extension": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
+                },
+                "data": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "fail_if_unknown": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["id", "data", "fail_if_unknown"],
+            "additionalProperties": false
+        }
+    }
+}

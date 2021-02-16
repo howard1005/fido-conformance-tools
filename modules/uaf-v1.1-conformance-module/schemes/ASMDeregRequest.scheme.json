@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "requestType": {
+            "type": "string",
+            "enum": [
+                "Deregister"
+            ]
+        },
+        "asmVersion": {
+            "$ref": "Version.scheme.json#/definitions/Version"
+        },
+        "authenticatorIndex": {
+            "type": "integer"
+        },
+        "args": {
+            "$ref": "ASMDeregisterIn.scheme.json#/definitions/DeregisterIn"
+        },
+        "exts": {
+            "type": "array",
+            "items": {
+                "$ref": "Extension.scheme.json#/definitions/Extension"
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "requestType",
+        "asmVersion",
+        "authenticatorIndex",
+        "args"
+    ],
+    "additionalProperties": false
+}

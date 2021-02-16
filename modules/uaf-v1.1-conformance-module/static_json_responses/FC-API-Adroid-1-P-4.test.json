@@ -1,0 +1,40 @@
+ [{
+    "header": {
+        "upv": {
+            "major": 1,
+            "minor": 1
+        },
+        "op": "Reg",
+        "appID": ""
+    },
+    "challenge": "IR9celOoUv1BuEsThdwNVQv",
+    "username": "hello@test.com",
+    "policy": {
+        "accepted": [
+            [{
+                "aaid": ["FFFF#0001"]
+            }],
+            [{
+                "aaid": ["D409#0101"]
+            }],
+            [{
+                "aaid": ["D409#0201"]
+            }],
+            [{
+                "aaid": ["D409#0501"]
+            }],
+            [{
+                "aaid": ["D409#0301"]
+            }],
+            [{
+                "aaid": ["D409#0601"]
+            }],
+            [{
+                "aaid": ["D409#0701"]
+            }],
+            [{
+                "aaid": ["D409#0801"]
+            }]
+        ]
+    }
+ }]

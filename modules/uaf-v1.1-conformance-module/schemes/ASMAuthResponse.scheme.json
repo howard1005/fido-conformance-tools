@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "statusCode": {
+            "$ref": "ASMStatusCode.scheme.json#/definitions/StatusCode"
+        },
+        "responseData": {
+            "$ref": "ASMAuthenticateOut.scheme.json#/definitions/AuthenticateOut"
+        },
+        "exts": {
+            "type": "array",
+            "items": {
+                "$ref": "Extension.scheme.json#/definitions/Extension"
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "statusCode",
+        "responseData"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "AuthenticateOut": {
+            "type": "object",
+            "properties": {
+                "assertion": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "assertionScheme": {
+                    "type": "string",
+                    "enum": [
+                        "UAFV1TLV"
+                    ]
+                }
+            },
+            "required": [
+                "assertion",
+                "assertionScheme"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

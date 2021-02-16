@@ -1,0 +1,51 @@
+{
+    "name": "ASM",
+    "platform": "android",
+    "description": "This test suit contains client tests",
+    "required": {
+        "all": ["clientVendor", "clientVersion", "metadataStatement"],
+        "android": ["ASMPackageName"]
+    },
+    "tests": {
+        "general": {
+            "name":"General tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-1.js"
+            ]
+        },
+        "register": {
+            "name":"Register tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-2.js"
+            ]
+        },
+        "authenticate": {
+            "name":"Auth tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-3.js"
+            ]
+        },
+        "deregister": {
+            "name":"Dereg tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/asm/Client-ASM-Protocol-4.js"
+            ]
+        },
+        "metadata": {
+            "name":"Metadata statement tests",
+            "description": "",
+            "helpers": [],
+            "cases": [
+                "client/metadata/Metadata-Stmt-1.js"
+            ]
+        }
+    }
+}

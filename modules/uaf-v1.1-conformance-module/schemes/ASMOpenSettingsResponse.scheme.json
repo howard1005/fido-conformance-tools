@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "statusCode": {
+            "$ref": "ASMStatusCode.scheme.json#/definitions/StatusCode"
+        }
+    },
+    "required": [
+        "statusCode"
+    ],
+    "additionalProperties": false
+}

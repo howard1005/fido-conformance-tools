@@ -1,0 +1,39 @@
+{
+    "name": "FIDO2.0",
+    "description": "Tests",
+    "protocolVersion": "",
+    "dependencies": [],
+    "defaults": {
+        "downloadMetadata": true,
+        "fido2OptionalAlgorithms": {}
+    },
+    "availableMetadataStatements": [
+        "CTAP2EdDSA25519SHA512.metadata.json",
+        "CTAP2RSA15SHA1TPMAttestation.metadata.json",
+        "CTAP2RSA15SHA256SafetynetAttestation.metadata.json",
+        "CTAP2RSA15SHA256TPMAttestation.metadata.json",
+        "CTAP2RSAPSSSHA256.metadata.json",
+        "CTAP2RSAPSSSHA384.metadata.json",
+        "CTAP2RSAPSSSHA512.metadata.json",
+        "CTAP2RSAV15SHA1.metadata.json",
+        "CTAP2RSAV15SHA256.metadata.json",
+        "CTAP2RSAV15SHA384.metadata.json",
+        "CTAP2RSAV15SHA512.metadata.json",
+        "CTAP2Secp256k1.metadata.json",
+        "CTAP2Secp256r1.metadata.json",
+        "CTAP2Secp256r1AndroidAttestation.metadata.json",
+        "CTAP2Secp256r1MultipleCertificates.metadata.json",
+        "CTAP2Secp256r1SelfSurrogate.metadata.json",
+        "CTAP2Secp384r1SHA384.metadata.json",
+        "CTAP2Secp521r1SHA512.metadata.json",
+        "CTAP2Secp256r1Extensions.metadata.json",
+        "U2FSecp256k1.metadata.json"
+    ],
+    "setup": "",
+    "schemes": [],
+    "testLists": {
+        "fido2authr": "authr-testlist.json",
+        "fido2server": "server-testlist.json",
+        "webauthn": "webauthn-testlist.json"
+    }
+}

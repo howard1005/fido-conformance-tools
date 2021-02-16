@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "DiscoveryData": {
+            "type": "object",
+            "properties": {
+                "availableAuthenticators": {
+                    "type" : "array",
+                    "items": {
+                        "$ref": "Authenticator.scheme.json#/definitions/Authenticator"
+                    }
+                },
+                "clientVendor": {
+                    "type" : "string"
+                },
+                "clientVersion": {
+                    "items": {
+                        "$ref": "Version.scheme.json#/definitions/ClientVersion"
+                    }
+                },
+                "supportedUAFVersions": {
+                    "type" : "array",
+                    "anyOf" : [
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version1_x"},
+                                {"$ref": "Version.scheme.json#/definitions/Version"}
+                            ]
+                        },
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version"},
+                                {"$ref": "Version.scheme.json#/definitions/Version1_x"}
+                            ]
+                        },
+                        {
+                            "items" : [
+                                {"$ref": "Version.scheme.json#/definitions/Version"}
+                            ]
+                        }
+                    ]
+
+                }
+            },
+            "required": ["availableAuthenticators", "clientVendor", "clientVersion", "supportedUAFVersions"]
+        }
+    }
+}

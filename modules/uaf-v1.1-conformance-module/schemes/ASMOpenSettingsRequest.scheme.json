@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "requestType": {
+            "enum": [
+                "OpenSettings"
+            ]
+        },
+        "asmVersion": {
+            "$ref": "Version.scheme.json#/definitions/Version"
+        },
+        "authenticatorIndex": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "requestType",
+        "asmVersion",
+        "authenticatorIndex"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Accepted": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "$ref": "MatchCriteria.scheme.json#/definitions/MatchCriteria"
+                }
+            }
+        },
+        "Policy": {
+            "type": "object",
+            "properties": {
+                "accepted": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "MatchCriteria.scheme.json#/definitions/MatchCriteria"
+                        }
+                    }
+                },
+                "disallowed": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "MatchCriteria.scheme.json#/definitions/MatchCriteria"
+                    }
+                }
+            },
+            "required": ["accepted"],
+            "additionalProperties": false
+        }
+    }
+}

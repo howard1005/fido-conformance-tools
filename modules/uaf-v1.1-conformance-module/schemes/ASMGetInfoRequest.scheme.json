@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "requestType": {
+            "type": "string",
+            "enum": [
+                "GetInfo"
+            ]
+        },
+        "asmVersion": {
+            "$ref": "Version.scheme.json#/definitions/Version"
+        }
+    },
+    "required": [
+        "requestType"
+    ],
+    "additionalProperties": false
+}

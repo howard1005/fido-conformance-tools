@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "CodeAccuracyDescriptor": {
+            "type": "object",
+            "properties": {
+                "base": {
+                    "type": "number"
+                },
+                "minLength": {
+                    "type": "number"
+                },
+                "maxRetries": {
+                    "type": "number"
+                },
+                "blockSlowdown": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "base",
+                "minLength"
+            ],
+            "additionalProperties": false
+        },
+        "BiometricAccuracyDescriptor": {
+            "type": "object",
+            "properties": {
+                "FAR": {
+                    "type": "number"
+                },
+                "FRR": {
+                    "type": "number"
+                },
+                "EER": {
+                    "type": "number"
+                },
+                "FAAR": {
+                    "type": "number"
+                },
+                "maxReferenceDataSets": {
+                    "type": "number"
+                },
+                "maxRetries": {
+                    "type": "number"
+                },
+                "blockSlowdown": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "PatternAccuracyDescriptor": {
+            "type": "object",
+            "properties": {
+                "minComplexity": {
+                    "type": "number"
+                },
+                "maxRetries": {
+                    "type": "number"
+                },
+                "blockSlowdown": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "minComplexity"
+            ],
+            "additionalProperties": false
+        }
+    }
+}
